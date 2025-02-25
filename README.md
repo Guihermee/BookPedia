@@ -1,26 +1,29 @@
 # BookPedia
-Projeto com intuito de servir como aprendizado para ferramenta KMP. Coisas que eu aprendi:
+A project aimed at learning KMP (Kotlin Multiplatform). Things I learned:
+
 - Remote API - Ktor
 - Local database - Room
 - Navigation
 - Animation
-- Injeção de dependência - Koin
-- Clean architecture
-- MVI em vez de MVVM
+- Dependency Injection - Koin
+- Clean Architecture
+- MVI instead of MVVM
 
-## Como rodar no Desktop?
-* Primeiro vá main.kt do `desktopMain` package que fica no caminho: `composeApp/src/desktopMain/kotlin/br/com/cerniauskas/bookpedia/main.kt`
-* Depois clica no Play do lado da fun Main().
-* 
+## How to run it on Desktop?
+1. First, go to `main.kt` inside the `desktopMain` package, located at:  
+   `composeApp/src/desktopMain/kotlin/br/com/cerniauskas/bookpedia/main.kt`
+2. Then, click the **Play** button next to the `fun main()`.
+
 ![image](https://github.com/user-attachments/assets/f2bba57d-7fb2-4dd5-b011-edd1afa46c15)
 
-* Você provavelmente vai receber a Exception `Exception in thread "main" java.lang.ExceptionInInitializerError`
-* Então abra o terminal do seu Android Studio e escreva o comando `./gradlew run`.
-* Sempre veja se o arquivo lá em cima no play está o arquivo `Main.kt` antes de rodar. Por isso precisamos rodar na mão pela primeira vez pois ele não aparece por padrão
+3. You will probably get the following exception:  
+   **`Exception in thread "main" java.lang.ExceptionInInitializerError`**
+4. To fix this, open the **Android Studio terminal** and run the command:
+   ```sh
+   ./gradlew run
 
-![image](https://github.com/user-attachments/assets/ec6b1156-48b9-4b96-82c9-6a2f81492e2e)
 
-Depois disso provavelmente deve funcionar:
+After that, it should work properly.
 
 ### Desktop
 ![image](https://github.com/user-attachments/assets/3522e11a-0fcc-45c4-b746-0c90e0c17129)
