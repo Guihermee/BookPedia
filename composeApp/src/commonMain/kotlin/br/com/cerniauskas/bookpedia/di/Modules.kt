@@ -1,10 +1,15 @@
 package br.com.cerniauskas.bookpedia.di
 
-import br.com.cerniauskas.bookpedia.book.book_list.data.network.KtorRemoteBookDataSource
-import br.com.cerniauskas.bookpedia.book.book_list.data.network.RemoteBookDataSource
-import br.com.cerniauskas.bookpedia.book.book_list.data.repository.DefaultBookRepository
-import br.com.cerniauskas.bookpedia.book.book_list.domain.BookRepository
-import br.com.cerniauskas.bookpedia.book.book_list.presentation.BookListViewModel
+import androidx.sqlite.driver.bundled.BundledSQLiteDriver
+import br.com.cerniauskas.bookpedia.book.data.database.DatabaseFactory
+import br.com.cerniauskas.bookpedia.book.data.database.FavoriteBookDatabase
+import br.com.cerniauskas.bookpedia.book.data.network.KtorRemoteBookDataSource
+import br.com.cerniauskas.bookpedia.book.data.network.RemoteBookDataSource
+import br.com.cerniauskas.bookpedia.book.data.repository.DefaultBookRepository
+import br.com.cerniauskas.bookpedia.book.domain.BookRepository
+import br.com.cerniauskas.bookpedia.book.presentation.SelectedBookViewModel
+import br.com.cerniauskas.bookpedia.book.presentation.book_detail.BookDetailViewModel
+import br.com.cerniauskas.bookpedia.book.presentation.book_list.BookListViewModel
 import br.com.cerniauskas.bookpedia.core.data.HttpClientFactory
 import org.koin.core.module.Module
 import org.koin.core.module.dsl.singleOf
@@ -19,5 +24,14 @@ val sharedModule = module {
     singleOf(::KtorRemoteBookDataSource).bind<RemoteBookDataSource>()
     singleOf(::DefaultBookRepository).bind<BookRepository>()
 
+    single {
+        get<DatabaseFactory>().create()
+            .setDriver(BundledSQLiteDriver())
+            .build()
+    }
+    single { get<FavoriteBookDatabase>().favoriteBookDao}
+
     viewModelOf(::BookListViewModel)
+    viewModelOf(::BookDetailViewModel)
+    viewModelOf(::SelectedBookViewModel)
 }
