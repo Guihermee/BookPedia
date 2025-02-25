@@ -1,7 +1,12 @@
 # BookPedia
-Projeto com intuito de servir como aprendizado para ferramenta KMP.
-
-
+Projeto com intuito de servir como aprendizado para ferramenta KMP. Coisas que eu aprendi:
+- Remote API - Ktor
+- Local database - Room
+- Navigation
+- Animation
+- Injeção de dependência - Koin
+- Clean architecture
+- MVI em vez de MVVM
 
 ## Como rodar no Desktop?
 * Primeiro vá main.kt do `desktopMain` package que fica no caminho: `composeApp/src/desktopMain/kotlin/br/com/cerniauskas/bookpedia/main.kt`
