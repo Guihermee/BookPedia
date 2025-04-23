@@ -1,5 +1,5 @@
 # Bookpedia
-Bookpedia is an Kotlin Multiplatform Compose Application created using Jetpack compose
+Bookpedia is an Kotlin Multiplatform Compose Application created using Jetpack compose targeting Android, IOS and Desktop
 
 ## Result
 
