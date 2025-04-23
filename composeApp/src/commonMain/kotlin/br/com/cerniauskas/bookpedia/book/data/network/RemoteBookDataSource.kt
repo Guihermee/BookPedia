@@ -5,6 +5,7 @@ import br.com.cerniauskas.bookpedia.book.data.dto.SearchResponseDto
 import br.com.cerniauskas.bookpedia.core.domain.DataError
 import br.com.cerniauskas.bookpedia.core.domain.Result
 
+// Presentation -> Domain <- Data
 interface RemoteBookDataSource {
     suspend fun searchBooks(
         query: String,

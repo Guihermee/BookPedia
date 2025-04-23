@@ -2,7 +2,6 @@ package br.com.cerniauskas.bookpedia.book.data.database
 
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import br.com.cerniauskas.bookpedia.book.data.database.FavoriteBookDatabase
 import java.io.File
 
 actual class DatabaseFactory {
